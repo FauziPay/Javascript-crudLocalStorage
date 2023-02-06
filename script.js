@@ -82,7 +82,7 @@ function AddData(){
 }
 
 // function to delete data from local storage 
-function deleteData(){
+function deleteData(index){
   var peopleList;
   if(localStorage.getItem("peopleList") == null){
     peopleList = [];
@@ -90,7 +90,7 @@ function deleteData(){
     peopleList = JSON.parse(localStorage.getItem("peopleList"));
   }
 
-  peopleList.slice(index, 1);
+  peopleList.splice(index, 1);
   localStorage.setItem("peopleList", JSON.stringify(peopleList));
   showData();
 }
